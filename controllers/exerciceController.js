@@ -1,10 +1,16 @@
+//exerciceController.js
+// Primero, requiere dotenv y carga las variables de entorno
+require('dotenv').config();
+
 const OpenAI = require('openai');
-const openai = new OpenAI({apiKey: 'apy Key'}); // pegala direcamente o crea una env de entorno en tu compu
+
+// Utiliza la variable de entorno para la apiKey
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 async function callOpenAI(prompt) {
     try {
         const completion = await openai.chat.completions.create({
-            model: 'gpt-3.5-turbo',
+            model: 'gpt-4',
             messages: [
                 {
                     role: 'system',
