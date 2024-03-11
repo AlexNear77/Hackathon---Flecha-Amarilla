@@ -2,7 +2,7 @@ const express = require('express');
 const tokenRoutes = require('./routes/tokenRoutes');
 
 const app = express();
-const PORT = 8000;
+const PORT = 8001;
 
 app.use(express.json());
 app.use('/api', tokenRoutes);
