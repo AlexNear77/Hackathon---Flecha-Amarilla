@@ -1,11 +1,13 @@
 //server.js
 const express = require('express');
+const cors = require('cors');
 const tokenRoutes = require('./routes/tokenRoutes');
 const exerciceRoutes = require('./routes/exerciceRoutes');
 const chat = require('./routes/chatGPTRoutes');
 require('dotenv').config();
 
 const app = express();
+app.use(cors());
 const PORT = 8000;
 
 app.use(express.json());
